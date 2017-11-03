@@ -27,7 +27,8 @@ RUN yum install -y \
 	libXrender-devel \
 	libSM-devel \
 	libX11-devel \
-	fontconfig && \
+	fontconfig \
+	compat-libtiff3 && \
 	yum clean headers && \
 	yum clean packages && \
 	yum clean metadata
@@ -62,6 +63,7 @@ RUN echo "n\n" | /home/scipion/scipion/scipion config && \
 # Copy config files
 COPY config_files/scipion.conf /home/scipion/scipion/config/scipion.conf
 COPY config_files/font.conf /etc/fonts/local.conf
+# COPY config_files/scipion.template /home/scipion/scipion/config/templates/scipion.template
 
 RUN chown -R scipion /home/scipion/*
 USER scipion
@@ -82,7 +84,7 @@ RUN ./scipion install -j 8 && ./scipion install \
 	gEMpicker \
 	localrec \
 	mag_distortion \
-	motioncor2 \
+	motioncor2-16.10.19 \
 	motioncorr \
 	nma \
 	relion \

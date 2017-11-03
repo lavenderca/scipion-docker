@@ -44,7 +44,7 @@ MATLAB_LIBDIR = None
 MOTIONCORR_HOME = %(EM_ROOT)s/motioncorr-2.1
 MOTIONCORR = dosefgpu_driftcorr_7.5
 # MOTIONCORR_CUDA_LIB = None # Fill to override scipion CUDA_LIB if different
-MOTIONCOR2_HOME = %(EM_ROOT)s/motioncor2-17.01.30
+MOTIONCOR2_HOME = %(EM_ROOT)s/motioncor2-16.10.19
 # MOTIONCOR2_CUDA_LIB = None # Fill to override scipion CUDA_LIB if different
 NMA_HOME = %(EM_ROOT)s/nma
 PYTOM_HOME = %(EM_ROOT)s/pytom
@@ -66,7 +66,7 @@ VMD_HOME = %(EM_ROOT)s/vmd
 
 [VARIABLES]
 #editor
-SCIPION_NOTES_PROGRAM = 
+SCIPION_NOTES_PROGRAM =
 SCIPION_NOTES_ARGS =
 SCIPION_NOTES_FILE =  notes.txt
 #protocol usage statistics
@@ -81,8 +81,8 @@ CC = gcc
 CXX = g++
 LINKERFORPROGRAMS = g++
 CCFLAGS = -std=c99
-CXXFLAGS = 
-LINKFLAGS = 
+CXXFLAGS =
+LINKFLAGS =
 
 # MPI variables
 MPI_CC = mpicc
