@@ -53,6 +53,7 @@ RUN adduser -m scipion
 # Copy Scipion files
 COPY scipion /home/scipion/scipion
 COPY scipion_scripts/protocol_qc_monitor.py /home/scipion/scipion/pyworkflow/em/protocol/monitors/protocol_qc_monitor.py
+COPY scipion_scripts/protocol_transfer.py /home/scipion/scipion/pyworkflow/em/protocol/monitors/protocol_transfer.py
 
 # Run Scipion config
 RUN echo "n\n" | /home/scipion/scipion/scipion config && \
@@ -63,14 +64,16 @@ RUN echo "n\n" | /home/scipion/scipion/scipion config && \
 # Copy config files
 COPY config_files/scipion.conf /home/scipion/scipion/config/scipion.conf
 COPY config_files/font.conf /etc/fonts/local.conf
-# COPY config_files/scipion.template /home/scipion/scipion/config/templates/scipion.template
 
 RUN chown -R scipion /home/scipion/*
 USER scipion
 WORKDIR /home/scipion/scipion
 
 # Perform Scipion installation and installation of related packages
-RUN ./scipion install -j 8 && ./scipion install \
+RUN ./scipion install -j 8 && \
+	rm -rf /home/scipion/scipion/software/tmp && \
+	rm -rf /home/scipion/scipion/software/em/*tgz
+RUN ./scipion install \
 	Gautomatch \
 	Gctf \
 	bsoft \

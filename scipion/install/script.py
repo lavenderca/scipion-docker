@@ -361,6 +361,17 @@ sklearn = env.addModule(
     default=False,
     deps=[scipy, numpy, cython])
 
+pexpect = env.addModule(
+    'pexpect',
+    tar='pexpect-4.2.1.tar.gz',
+    url='https://pypi.python.org/packages/e8/13/d0b0599099d6cd23663043a2a0bb7c61e58c6ba359b2656e6fb000ef5b98/pexpect-4.2.1.tar.gz#md5=3694410001a99dff83f0b500a1ca1c95',
+)
+
+ptyprocess = env.addModule(
+    'ptyprocess',
+    tar='ptyprocess-0.5.2.tar.gz',
+    url='https://pypi.python.org/packages/51/83/5d07dc35534640b06f9d9f1a1d2bc2513fb9cc7595a1b0e28ae5477056ce/ptyprocess-0.5.2.tar.gz#md5=d3b8febae1b8c53b054bd818d0bb8665',
+)
 
 
 #  ************************************************************************

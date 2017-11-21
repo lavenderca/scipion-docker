@@ -9,3 +9,4 @@ from protocol_monitor_ctf import ProtMonitorCTF, CtfMonitorPlotter, MonitorCTF
 from protocol_monitor_system import ProtMonitorSystem, SystemMonitorPlotter
 
 from protocol_qc_monitor import ProtQCSummary
+from protocol_transfer import ProtTransfer
