@@ -1,7 +1,10 @@
 FROM nvidia/cuda:7.5-cudnn5-devel-centos7
 
+RUN yum remove -y cpp
+
 # Install Scipion dependencies
 RUN yum install -y \
+	cpp \
 	csh \
 	which \
 	make \
@@ -70,10 +73,7 @@ USER scipion
 WORKDIR /home/scipion/scipion
 
 # Perform Scipion installation and installation of related packages
-RUN ./scipion install -j 8 && \
-	rm -rf /home/scipion/scipion/software/tmp && \
-	rm -rf /home/scipion/scipion/software/em/*tgz
-RUN ./scipion install \
+RUN ./scipion install -j 8 && ./scipion install \
 	Gautomatch \
 	Gctf \
 	bsoft \

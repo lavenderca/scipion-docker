@@ -179,8 +179,7 @@ class TransferMonitor(Monitor):
             if isinstance(prot, ProtImportMovies):
                 for movie in prot.outputMovies:
                     movie_base_name = \
-                        os.path.splitext(os.path.basename(
-                            movie.getFileName()))[0]
+                        os.path.basename(movie.getFileName())
 
                     #  Transfer movie file:
                     transfer_file = os.path.join(
